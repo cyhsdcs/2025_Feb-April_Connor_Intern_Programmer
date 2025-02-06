@@ -14,3 +14,5 @@ The goal of this project is to create a web-based presentation desk that allows 
 <li>Minimalistic and professional design.</li>
 <li>Consistent typography and color scheme across all pages.Animations for page transitions (e.g., slide-in, fade-in) using CSS or a library.</li>
 </ul>
+
+## Tech Stack
