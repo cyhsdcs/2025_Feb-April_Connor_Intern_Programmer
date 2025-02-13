@@ -13,13 +13,13 @@ This project is a PowerPoint-like web application that consists of multiple sect
 ## Tech Stack
 
 ### Frontend
-- Next.js 13+ (with App Router)
+- Next.js 15.1.6
 - TypeScript
 - Tailwind CSS
 - Framer Motion (for slide transitions)
 
 ### Backend
-- Next.js
+- Next.js 15.1.6
 - Node.js
 
 
