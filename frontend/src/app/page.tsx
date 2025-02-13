@@ -2,7 +2,6 @@
 import { useState, useRef } from 'react'
 import { Swiper as SwiperType } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, EffectFade } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -10,6 +9,8 @@ import 'swiper/css/effect-fade'
 
 // 添加自定义样式
 import './swiper-custom.css'
+
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
 type SlideSection = {
   id: number;
@@ -147,62 +148,61 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <main className="w-full relative px-12">
-        <button 
-          onClick={handlePrev} 
-          className="swiper-custom-button-prev"
-          aria-label="Previous slide"
-        />
-        <button 
-          onClick={handleNext}
-          className="swiper-custom-button-next"
-          aria-label="Next slide"
-        />
+    <main className="min-h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+      <div className="w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 mx-auto">
+        {/* Navigation buttons */}
+        <div className="relative w-full">
+          <button
+            onClick={handlePrev}
+            className="absolute -left-4 sm:-left-8 md:-left-12 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 bg-white/80 hover:bg-white rounded-full shadow-md transition-all"
+          >
+            <ChevronLeftIcon className="w-6 h-6 sm:w-8 sm:h-8" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute -right-4 sm:-right-8 md:-right-12 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 bg-white/80 hover:bg-white rounded-full shadow-md transition-all"
+          >
+            <ChevronRightIcon className="w-6 h-6 sm:w-8 sm:h-8" />
+          </button>
 
-        <Swiper
-          modules={[Navigation, Pagination, EffectFade]}
-          effect="fade"
-          fadeEffect={{ crossFade: true }}
-          speed={300}
-          spaceBetween={50}
-          slidesPerView={1}
-          initialSlide={0}
-          loop={false}
-          allowTouchMove={true}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
-          className="max-w-4xl mx-auto presentation-swiper"
-        >
-          {slides.map((slide) => (
-            <SwiperSlide key={slide.id}>
-              <div className="py-8">
-                <h2 className="text-4xl font-bold mb-12 text-center">
-                  {slide.title}
-                </h2>
-                <div className="flex justify-center">
-                  {slide.component()}
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          {/* Swiper container */}
+          <div className="relative w-full aspect-[16/9] sm:aspect-[16/10] md:aspect-[16/9]">
+            <Swiper
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              onSlideChange={(swiper) => {
+                setCurrentSlide(swiper.activeIndex);
+              }}
+              className="w-full h-full"
+            >
+              {slides.map((slide) => (
+                <SwiperSlide key={slide.id} className="w-full h-full">
+                  <div className="w-full h-full p-4 sm:p-6 md:p-8 overflow-auto">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+                      {slide.title}
+                    </h2>
+                    <div className="w-full">{slide.component()}</div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
 
-        {/* 添加页码指示器 */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+        {/* Navigation dots */}
+        <div className="flex justify-center gap-2 mt-4 sm:mt-6">
           {slides.map((_, index) => (
             <button
               key={index}
-              onClick={() => swiperRef.current?.slideTo(index)}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                currentSlide === index ? 'bg-blue-500' : 'bg-gray-300'
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
+                currentSlide === index ? "bg-blue-500 scale-125" : "bg-gray-300"
               }`}
+              onClick={() => swiperRef.current?.slideTo(index)}
             />
           ))}
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
