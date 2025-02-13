@@ -135,14 +135,21 @@ export default function Home() {
 
   const handlePrev = () => {
     if (swiperRef.current) {
-      const newIndex = (currentSlide - 1 + slides.length) % slides.length;
+      let newIndex = currentSlide;
+      if (currentSlide > 0) {
+        newIndex = currentSlide - 1;
+      }
+      
       swiperRef.current.slideTo(newIndex);
     }
   };
 
   const handleNext = () => {
     if (swiperRef.current) {
-      const newIndex = (currentSlide + 1) % slides.length;
+      let newIndex = currentSlide;
+      if (currentSlide < 4) {
+        newIndex = currentSlide +1;
+      }
       swiperRef.current.slideTo(newIndex);
     }
   };
