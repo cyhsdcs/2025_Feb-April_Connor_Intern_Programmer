@@ -3,23 +3,18 @@ import { useState, useRef } from 'react'
 import { Swiper as SwiperType } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { SlideSection } from './slide_section'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 import '../swiper-custom.css'
 
-type SlideSection = {
-  id: number;
-  title: string;
-  component: () => React.ReactNode;
-}
-
 interface SliderProps {
   slides: SlideSection[];
 }
 
-export default function Slider({ slides }: SliderProps) {
+export default function MySwiper({ slides }: SliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const swiperRef = useRef<SwiperType | undefined>(undefined);
 
@@ -48,13 +43,13 @@ export default function Slider({ slides }: SliderProps) {
       <div className="relative w-full">
         <button
           onClick={handlePrev}
-          className="absolute -left-4 sm:-left-8 md:-left-12 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 bg-white/80 hover:bg-white rounded-full shadow-md transition-all"
+          className="slider-nav-btn slider-nav-btn-left"
         >
           <ChevronLeftIcon className="w-6 h-6 sm:w-8 sm:h-8" />
         </button>
         <button
           onClick={handleNext}
-          className="absolute -right-4 sm:-right-8 md:-right-12 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 bg-white/80 hover:bg-white rounded-full shadow-md transition-all"
+          className="slider-nav-btn slider-nav-btn-right"
         >
           <ChevronRightIcon className="w-6 h-6 sm:w-8 sm:h-8" />
         </button>

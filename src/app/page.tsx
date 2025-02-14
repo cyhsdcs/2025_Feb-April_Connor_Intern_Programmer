@@ -1,11 +1,7 @@
 'use client'
-import Slider from './components/Slider'
+import MySwiper from './components/MySwiper';
+import { SlideSection } from './components/slide_section'
 
-type SlideSection = {
-  id: number;
-  title: string;
-  component: () => React.ReactNode;
-}
 
 export default function Home() {
   const slides: SlideSection[] = [
@@ -121,7 +117,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-      <Slider slides={slides} />
+      <MySwiper slides={slides} />
     </main>
   );
 }
