@@ -1,0 +1,127 @@
+.presentation-swiper {
+    position: relative;
+    padding: 0 60px; /* 增加padding以容纳按钮 */
+}
+
+/* 自定义导航按钮样式 */
+.swiper-custom-button-prev,
+.swiper-custom-button-next {
+    width: 48px;
+    height: 48px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.swiper-custom-button-prev {
+    left: 0;
+}
+
+.swiper-custom-button-next {
+    right: 0;
+}
+
+.swiper-custom-button-prev::after,
+.swiper-custom-button-next::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-style: solid;
+    border-width: 2.5px 2.5px 0 0;
+    border-color: #3b82f6; /* 使用蓝色箭头 */
+    display: inline-block;
+}
+
+.swiper-custom-button-prev::after {
+    transform: rotate(-135deg);
+    margin-left: 5px;
+}
+
+.swiper-custom-button-next::after {
+    transform: rotate(45deg);
+    margin-right: 5px;
+}
+
+.swiper-custom-button-prev:hover,
+.swiper-custom-button-next:hover {
+    background-color: #3b82f6; /* 悬停时变成蓝色背景 */
+    transform: translateY(-50%) scale(1.1); /* 稍微放大按钮 */
+}
+
+.swiper-custom-button-prev:hover::after,
+.swiper-custom-button-next:hover::after {
+    border-color: white; /* 悬停时箭头变成白色 */
+}
+
+/* 添加按钮激活状态效果 */
+.swiper-custom-button-prev:active,
+.swiper-custom-button-next:active {
+    transform: translateY(-50%) scale(0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 禁用状态样式 */
+.swiper-button-disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed;
+}
+
+/* 分页器样式 */
+.swiper-pagination {
+    position: relative !important;
+    margin-top: 2rem;
+    bottom: 0 !important;
+}
+
+.swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    background: #ccc !important;
+    opacity: 1 !important;
+    margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #3b82f6 !important;
+}
+
+/* 内容容器样式 */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.swiper-slide-active {
+    opacity: 1;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .presentation-swiper {
+        padding: 0 40px;
+    }
+
+    .swiper-custom-button-prev,
+    .swiper-custom-button-next {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .swiper-custom-button-prev::after,
+    .swiper-custom-button-next::after {
+        font-size: 14px !important;
+    }
+}
