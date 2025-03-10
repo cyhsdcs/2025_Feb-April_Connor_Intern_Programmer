@@ -26,11 +26,11 @@ body {
 			bg-white/80 hover:bg-white rounded-full shadow-md transition-all;
     }
 
-    .slider-nav-btn-left {
+    /* .slider-nav-btn-left {
         @apply -left-4 sm:-left-8 md:-left-12;
-    }
+    } */
 
-    .slider-nav-btn-right {
+    /* .slider-nav-btn-right {
         @apply -right-4 sm:-right-8 md:-right-12;
-    }
+    } */
 }

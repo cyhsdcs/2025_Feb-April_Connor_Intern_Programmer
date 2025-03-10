@@ -39,22 +39,17 @@ export default function MySwiper({ slides }: SliderProps) {
     };
 
     return (
-        <div className="w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 mx-auto">
+        <div className="w-full">
             <div className="relative w-full">
                 <button
                     onClick={handlePrev}
-                    className="slider-nav-btn slider-nav-btn-left"
+                    className="fixed left-0 top-1/2 -translate-y-1/2 z-10 p-2 
+                              bg-white/80 hover:bg-white rounded-full shadow-md"
                 >
                     <ChevronLeftIcon className="w-6 h-6 sm:w-8 sm:h-8" />
                 </button>
-                <button
-                    onClick={handleNext}
-                    className="slider-nav-btn slider-nav-btn-right"
-                >
-                    <ChevronRightIcon className="w-6 h-6 sm:w-8 sm:h-8" />
-                </button>
 
-                <div className="relative w-full aspect-[16/9] sm:aspect-[16/10] md:aspect-[16/9]">
+                <div className="w-full px-12">
                     <Swiper
                         onSwiper={(swiper) => {
                             swiperRef.current = swiper;
@@ -70,7 +65,7 @@ export default function MySwiper({ slides }: SliderProps) {
                                 className="w-full h-full"
                             >
                                 <div className="w-full h-full p-4 sm:p-6 md:p-8 overflow-auto">
-                                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+                                    <h2 className="text-2xl text-sky-500 sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
                                         {slide.title}
                                     </h2>
                                     <div className="w-full">
@@ -81,9 +76,17 @@ export default function MySwiper({ slides }: SliderProps) {
                         ))}
                     </Swiper>
                 </div>
+
+                <button
+                    onClick={handleNext}
+                    className="fixed right-0 top-1/2 -translate-y-1/2 z-10 p-2 
+                              bg-white/80 hover:bg-white rounded-full shadow-md"
+                >
+                    <ChevronRightIcon className="w-6 h-6 sm:w-8 sm:h-8" />
+                </button>
             </div>
 
-            <div className="flex justify-center gap-2 mt-4 sm:mt-6">
+            <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex justify-center gap-2 z-20">
                 {slides.map((_, index) => (
                     <button
                         key={index}
