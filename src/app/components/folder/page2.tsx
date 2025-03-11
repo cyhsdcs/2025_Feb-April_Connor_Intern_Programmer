@@ -66,17 +66,17 @@ const Page2 = () => {
 
     return (
         <div className="w-full">
-            <h2 className="text-2xl text-green-600 sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 
-                            border-b-2 border-green-600 pb-2 inline-block">
+            <h2 className="text-2xl text-abc-green sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 
+                            border-b-2 border-abc-green pb-2 inline-block">
                 MEMORABLE WORK EXPERIENCE
             </h2>
             <div className="text-center my-8">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-green-600 transform hover:scale-105 transition-transform">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-abc-green transform hover:scale-105 transition-transform">
                     Two Years in ABC
                 </h1>
             </div>
             <article className="w-full bg-white p-6 rounded-lg shadow-xl">
-                <h2 className="text-2xl font-semibold mb-4 text-green-400">Glad with ☺️</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-abc-green">Glad with ☺️</h2>
                 <div className="flex flex-row w-full h-auto">
                     <div className="whitespace-pre-line w-1/4 text-xl">{workData.work1}</div>
                     <div className="relative w-3/4 h-auto">
@@ -129,7 +129,7 @@ const Page2 = () => {
                                 key={index}
                                 className={`w-2 h-2 rounded-full transition-all ${
                                     currentSlide === index
-                                    ? 'bg-green-500 scale-125'
+                                    ? 'bg-abc-green scale-125'
                                     : 'bg-gray-300'
                                 }`}
                                 onClick={() => swiperRef.current?.slideTo(index)}
@@ -143,7 +143,7 @@ const Page2 = () => {
             <div className="flex justify-end my-6">
                 <button 
                     onClick={() => setShowModal(true)}
-                    className="px-4 py-2 bg-white text-green-600 hover:bg-red-600 hover:text-white rounded-lg shadow-md transition-colors"
+                    className="px-4 py-2 bg-white text-abc-green hover:bg-red-600 hover:text-white rounded-lg shadow-md transition-colors"
                 >
                     And…
                 </button>

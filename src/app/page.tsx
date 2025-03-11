@@ -3,6 +3,7 @@ import MySwiper from './components/MySwiper';
 import { SlideSection } from './components/slide_section';
 import Page1 from './components/folder/page1';
 import Page2 from './components/folder/page2';
+import Page3 from './components/folder/page3';
 export default function Home() {
     const slides: SlideSection[] = [
         {
@@ -23,7 +24,7 @@ export default function Home() {
             id: 3,
             title: 'Gains in Company',
             component: () => (
-                <Page1 />
+                <Page3 />
             ),
         },
         {
