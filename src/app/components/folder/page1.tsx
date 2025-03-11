@@ -54,12 +54,16 @@ const Page1 = () => {
 
     return (
         <div className="w-full">
+            <h2 className="text-2xl text-sky-500 sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 
+                            border-b-2 border-sky-300 pb-2 inline-block">
+                PROFILE
+            </h2>
             <article className="w-full bg-white p-6 rounded-lg shadow-xl">
                 <h2 className="text-2xl font-semibold mb-4 text-sky-400">Ability</h2>
                 <div className="flex flex-row w-full">
                     <div className="whitespace-pre-line w-3/4">{resumeData.profile}</div>
                     <div className="right-0">
-                        <img src="/images/profile.jpg" alt="profile" className="right-0 w-52 h-52 object-cover" />
+                        <img src="/images/profile.jpg" alt="profile" className="right-0 w-52 h-52 object-contain" />
                     </div>
                 </div>
             </article>

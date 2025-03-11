@@ -2,6 +2,7 @@
 import MySwiper from './components/MySwiper';
 import { SlideSection } from './components/slide_section';
 import Page1 from './components/folder/page1';
+import Page2 from './components/folder/page2';
 export default function Home() {
     const slides: SlideSection[] = [
         {
@@ -13,31 +14,14 @@ export default function Home() {
         },
         {
             id: 2,
-            title: '难忘的工作经历',
+            title: 'Memorable Work Experience',
             component: () => (
-                <div className="max-w-2xl w-full">
-                    <article className="bg-white p-6 rounded-lg shadow">
-                        <h2 className="text-2xl font-semibold mb-4">
-                            项目名称
-                        </h2>
-                        <div className="space-y-4">
-                            <section>
-                                <h3 className="text-xl font-medium mb-2">
-                                    项目背景
-                                </h3>
-                                <p className="text-gray-700">
-                                    {/* 添加项目背景描述 */}
-                                </p>
-                            </section>
-                            {/* 其他项目内容... */}
-                        </div>
-                    </article>
-                </div>
+                <Page2 />
             ),
         },
         {
             id: 3,
-            title: '在公司的收获',
+            title: 'Gains in Company',
             component: () => (
                 <Page1 />
             ),

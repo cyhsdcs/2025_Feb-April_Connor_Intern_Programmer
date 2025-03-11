@@ -54,3 +54,10 @@ export const userApi = {
     getOther: () => 
         fetchApi<Info>('/resume/other'),
 };
+
+export const workApi = {
+    getWork1: () =>
+        fetchApi<Info>('/work/advantage'),
+    getWork2: () =>
+        fetchApi<Info>('/work/disadvantage'),
+};
