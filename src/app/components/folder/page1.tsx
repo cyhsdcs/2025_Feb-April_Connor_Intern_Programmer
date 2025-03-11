@@ -72,8 +72,8 @@ const Page1 = () => {
                 <div className="flex flex-row w-full">
                     <div className="whitespace-pre-line w-3/4">{resumeData.education}</div>
                     <div className="right-0">
-                        <img src="/images/hku.png" alt="profile" className="right-0 w-40 h-40 object-contain" />
-                        <img src="/images/sysu.png" alt="profile" className="right-0 w-40 h-40 object-contain" />
+                        <img src="/images/hku.png" alt="hku" className="right-0 w-40 h-40 object-contain" />
+                        <img src="/images/sysu.png" alt="sysu" className="right-0 w-40 h-40 object-contain" />
                     </div>
                 </div>
             </section>
@@ -83,7 +83,13 @@ const Page1 = () => {
 
             <section>
                 <h2 className="text-2xl font-semibold mb-4 text-sky-400">Experience</h2>
-                <div className="whitespace-pre-line">{resumeData.experience}</div>
+                <div className="flex flex-row w-full">
+                    <div className="whitespace-pre-line w-3/4">{resumeData.experience}</div>
+                    <div className="right-0">
+                        <img src="/images/abc.png" alt="abc" className="right-0 w-40 h-40 object-contain" />
+                        <img src="/images/ebram.png" alt="abc" className="right-0 w-40 h-40 object-contain" />
+                    </div>
+                </div>
             </section>
 
             <br></br>
@@ -91,7 +97,12 @@ const Page1 = () => {
 
             <section>
                 <h2 className="text-2xl font-semibold mb-4 text-sky-400">Project</h2>
-                <div className="whitespace-pre-line">{resumeData.project}</div>
+                <div className="flex flex-row w-full">
+                    <div className="whitespace-pre-line w-3/4">{resumeData.project}</div>
+                    <div className="right-0">
+                        <img src="/images/kyd.png" alt="kyd" className="right-0 w-80 h-100 object-contain" />
+                    </div>
+                </div>
             </section>
 
             <br></br>
@@ -101,6 +112,9 @@ const Page1 = () => {
                 <h2 className="text-2xl font-semibold mb-4 text-sky-400">Other</h2>
                 <div className="whitespace-pre-line">{resumeData.other}</div>
             </section>
+
+            <br></br>
+            <br></br>
         </div>
     );
 };

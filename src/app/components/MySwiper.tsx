@@ -65,7 +65,8 @@ export default function MySwiper({ slides }: SliderProps) {
                                 className="w-full h-full"
                             >
                                 <div className="w-full h-full p-4 sm:p-6 md:p-8 overflow-auto">
-                                    <h2 className="text-2xl text-sky-500 sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+                                    <h2 className="text-2xl text-sky-500 sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 
+                                                   border-b-2 border-sky-300 pb-2 inline-block">
                                         {slide.title}
                                     </h2>
                                     <div className="w-full">
