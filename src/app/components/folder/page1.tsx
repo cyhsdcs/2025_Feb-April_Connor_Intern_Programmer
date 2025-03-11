@@ -54,7 +54,7 @@ const Page1 = () => {
 
     return (
         <div className="w-full">
-            <section className="w-full">
+            <article className="w-full bg-white p-6 rounded-lg shadow-xl">
                 <h2 className="text-2xl font-semibold mb-4 text-sky-400">Ability</h2>
                 <div className="flex flex-row w-full">
                     <div className="whitespace-pre-line w-3/4">{resumeData.profile}</div>
@@ -62,12 +62,12 @@ const Page1 = () => {
                         <img src="/images/profile.jpg" alt="profile" className="right-0 w-52 h-52 object-cover" />
                     </div>
                 </div>
-            </section>
+            </article>
 
             <br></br>
             <br></br>
 
-            <section>
+            <article className="w-full bg-white p-6 rounded-lg shadow-xl">
                 <h2 className="text-2xl font-semibold mb-4 text-sky-400">Education</h2>
                 <div className="flex flex-row w-full">
                     <div className="whitespace-pre-line w-3/4">{resumeData.education}</div>
@@ -76,12 +76,12 @@ const Page1 = () => {
                         <img src="/images/sysu.png" alt="sysu" className="right-0 w-40 h-40 object-contain" />
                     </div>
                 </div>
-            </section>
+            </article>
 
             <br></br>
             <br></br>
 
-            <section>
+            <article className="w-full bg-white p-6 rounded-lg shadow-xl">
                 <h2 className="text-2xl font-semibold mb-4 text-sky-400">Experience</h2>
                 <div className="flex flex-row w-full">
                     <div className="whitespace-pre-line w-3/4">{resumeData.experience}</div>
@@ -90,12 +90,12 @@ const Page1 = () => {
                         <img src="/images/ebram.png" alt="abc" className="right-0 w-40 h-40 object-contain" />
                     </div>
                 </div>
-            </section>
+            </article>
 
             <br></br>
             <br></br>
 
-            <section>
+            <article className="w-full bg-white p-6 rounded-lg shadow-xl">
                 <h2 className="text-2xl font-semibold mb-4 text-sky-400">Project</h2>
                 <div className="flex flex-row w-full">
                     <div className="whitespace-pre-line w-3/4">{resumeData.project}</div>
@@ -103,15 +103,15 @@ const Page1 = () => {
                         <img src="/images/kyd.png" alt="kyd" className="right-0 w-80 h-100 object-contain" />
                     </div>
                 </div>
-            </section>
+            </article>
 
             <br></br>
             <br></br>
 
-            <section>
+            <article className="w-full bg-white p-6 rounded-lg shadow-xl">
                 <h2 className="text-2xl font-semibold mb-4 text-sky-400">Other</h2>
                 <div className="whitespace-pre-line">{resumeData.other}</div>
-            </section>
+            </article>
 
             <br></br>
             <br></br>
