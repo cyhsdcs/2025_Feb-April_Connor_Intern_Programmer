@@ -24,8 +24,7 @@ export default function MySwiper({ slides }: SliderProps) {
             if (currentSlide > 0) {
                 newIndex = currentSlide - 1;
             }
-            swiperRef.current.slideTo(newIndex);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            handleSlideChange(newIndex);
         }
     };
 
@@ -35,9 +34,13 @@ export default function MySwiper({ slides }: SliderProps) {
             if (currentSlide < slides.length - 1) {
                 newIndex = currentSlide + 1;
             }
-            swiperRef.current.slideTo(newIndex);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            handleSlideChange(newIndex);
         }
+    };
+
+    const handleSlideChange = (index: number) => {
+        swiperRef.current?.slideTo(index);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (

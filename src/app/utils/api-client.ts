@@ -62,7 +62,7 @@ export const workApi = {
         fetchApi<Info>('/work/disadvantage'),
 };
 
-export const studyApi = {
-    getStudy: () =>
-        fetchApi<Info>('/study'),
+export const gainApi = {
+    getGain: () =>
+        fetchApi<Info>('/gain'),
 };  
