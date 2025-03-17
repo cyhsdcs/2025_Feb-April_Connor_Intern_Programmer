@@ -49,3 +49,16 @@ body {
 .animate-fade-in-up {
   animation: fadeInUp 0.3s ease-out forwards;
 }
+
+@keyframes scrollVertical {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);  /* 移动距离为图片高度的一半 */
+    }
+}
+
+.animate-scroll-vertical {
+    animation: scrollVertical 60s linear infinite;
+}

@@ -9,7 +9,9 @@ import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
 
 interface gainData {
-    gain: string;
+    tsa: string;
+    iet: string;
+    code: string;
 }
 
 const sport_arbitration_images = [
@@ -21,31 +23,42 @@ const IET_images = [
     "/images/IET.jpg",
 ]
 
+const code_images = [
+    "/images/code.jpg",
+    "/images/code.jpg",
+]
+
 const Page3 = () => {
     const [gainData, setGainData] = useState<gainData>({
-        gain:'',
+        tsa: '',
+        iet: '',
+        code: ''
     });
     const [error, setError] = useState<string>();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function loadStudyData() {
+        async function loadGainData() {
             try {
-                const [gain] = await Promise.all([
-                    gainApi.getGain(),
+                const [tsa, iet, code] = await Promise.all([
+                    gainApi.getTSA(),
+                    gainApi.getIET(),
+                    gainApi.getCode(),
                 ]);
 
                 setGainData({
-                    gain: gain.message,
+                    tsa: tsa.message,
+                    iet: iet.message,
+                    code: code.message,
                 });
             } catch (err) {
-                setError(err instanceof Error ? err.message : 'Failed to load resume data');
+                setError(err instanceof Error ? err.message : 'Failed to load gain data');
             } finally {
                 setLoading(false);
             }
         }
 
-        loadStudyData();
+        loadGainData();
     }, []);
 
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -74,7 +87,7 @@ const Page3 = () => {
                 <div className="flex flex-row w-full h-auto">
                     <div className="w-1/3">
                         <h2 className="text-2xl font-semibold mb-4 text-custom-blue">Technology x Sports Arbitration</h2>
-                        <div className="whitespace-pre-line text-xl">{gainData.gain}</div>
+                        <div className="whitespace-pre-line text-xl">{gainData.tsa}</div>
                     </div>
                     <div className="relative w-2/3 h-auto">
                         {/* 上翻按钮 */}
@@ -151,8 +164,8 @@ const Page3 = () => {
             <article className="w-full bg-white p-6 rounded-lg shadow-xl">
                 <div className="flex flex-row w-full">
                     <div className="w-1/3">
-                        <h2 className="text-2xl font-semibold mb-4 text-custom-blue">IET</h2>
-                        <div className="whitespace-pre-line text-xl">{gainData.gain}</div>
+                        <h2 className="text-2xl font-semibold mb-4 text-custom-blue">Technical Visit to Digital Twins Centre</h2>
+                        <div className="whitespace-pre-line text-xl">{gainData.iet}</div>
                     </div>
                     <div className="relative w-2/3 h-auto">
                         <Swiper
@@ -177,6 +190,35 @@ const Page3 = () => {
                                 </SwiperSlide>
                             ))}
                         </Swiper>
+                    </div>
+                </div>
+            </article>
+
+            <br></br>
+            <br></br>
+
+            <article className="w-full bg-white p-6 rounded-lg shadow-xl">
+                <div className="flex flex-row w-full">
+                    <div className="w-1/3">
+                        <h2 className="text-2xl font-semibold mb-4 text-custom-blue">
+                            Coding Task
+                        </h2>
+                        <div className="whitespace-pre-line text-xl">{gainData.code}</div>
+                    </div>
+                    <div className="relative w-2/3 h-[500px] overflow-hidden">
+                        <div className="absolute w-full animate-scroll-vertical">
+                            <img 
+                                src="/images/code.jpg" 
+                                alt="scrolling" 
+                                className="w-full object-cover"
+                            />
+                            {/* 复制一份图片实现无缝循环 */}
+                            <img 
+                                src="/images/code.jpg" 
+                                alt="scrolling" 
+                                className="w-full object-cover"
+                            />
+                        </div>
                     </div>
                 </div>
             </article>

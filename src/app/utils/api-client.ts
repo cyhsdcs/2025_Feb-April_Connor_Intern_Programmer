@@ -63,6 +63,10 @@ export const workApi = {
 };
 
 export const gainApi = {
-    getGain: () =>
-        fetchApi<Info>('/gain'),
+    getTSA: () => 
+        fetchApi<Info>('/gain/tsa'),
+    getIET: () =>
+        fetchApi<Info>('/gain/iet'),
+    getCode: () =>
+        fetchApi<Info>('/gain/code'),
 };  

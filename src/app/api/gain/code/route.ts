@@ -1,16 +1,16 @@
-// app/api/study/route.ts
+// app/api/gain/code/route.ts
 import { NextResponse } from 'next/server';
 
-// GET /api/study - get study information
+// GET /api/gain/code - get code information
 export async function GET() {
     try {
-        // 这里通常会有数据库操作
         return NextResponse.json({
-            message: `Many`,
+            message: `- Self Presentation Project\n
+                - Transcription Panel`,
         });
     } catch (error) {
         return NextResponse.json(
-            { error: 'Failed to get study' },
+            { error: 'Failed to get code' },
             { status: 500 },
         );
     }
