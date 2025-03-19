@@ -8,7 +8,9 @@ export async function GET() {
         return NextResponse.json({
             message: `- Valuable experience for first-time participants.\n
                 - Primarily responsible for communicating with online guests Dr. Joe.\n
-                - Also assisting with equipment handling and setup, etc.\n`,
+                - Also assisting with equipment handling and setup, etc.\n
+                - real teamwork isn't just splitting up work\n
+                – it's stepping up to help each other do things no one could do alone.`,
         });
     } catch (error) {
         return NextResponse.json(

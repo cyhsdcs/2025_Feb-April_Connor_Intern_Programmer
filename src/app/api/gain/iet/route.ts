@@ -6,7 +6,9 @@ export async function GET() {
     try {
         // 这里通常会有数据库操作
         return NextResponse.json({
-            message: `- Exploring latest construction technology through adopting Digital Twins Technology.\n`,
+            message: `- Exploring latest construction technology through adopting Digital Twins Technology.\n
+                - A potential career path\n
+                - More combination? Delivery, healthcare, agriculture, etc`,
         });
     } catch (error) {
         return NextResponse.json(

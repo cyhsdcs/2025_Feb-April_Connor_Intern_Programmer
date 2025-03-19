@@ -58,6 +58,15 @@ const Page1 = () => {
                             border-b-2 border-sky-300 pb-2 inline-block">
                 PROFILE
             </h2>
+
+            <article className="w-full bg-white p-6 rounded-lg shadow-xl">
+                <h2 className="text-2xl font-semibold mb-4 text-sky-400 text-center">Chen Yuanhong 陈远泓</h2>
+                <div className="whitespace-pre-line text-center">Tel: +852 5620 5053 | Email: cyhnmb@gmail.com | www.linkedin.com/in/yuanhongchen</div>
+            </article>
+
+            <br></br>
+            <br></br>
+
             <article className="w-full bg-white p-6 rounded-lg shadow-xl">
                 <h2 className="text-2xl font-semibold mb-4 text-sky-400">Ability</h2>
                 <div className="flex flex-row w-full">

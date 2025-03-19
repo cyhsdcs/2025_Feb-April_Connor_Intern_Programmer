@@ -6,7 +6,11 @@ export async function GET() {
     try {
         return NextResponse.json({
             message: `- Self Presentation Project\n
-                - Transcription Panel`,
+                - Transcription Panel\n
+                - Learn new frameworks\n
+                - Learn right coding style\n
+                - Learn how to do the version control\n
+                - Learn team collaboration`,
         });
     } catch (error) {
         return NextResponse.json(
