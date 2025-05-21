@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { userApi } from '@/app/utils/api-client';
+import Image from 'next/image';
 
 interface ResumeData {
     profile: string;
@@ -72,7 +73,7 @@ const Page1 = () => {
                 <div className="flex flex-row w-full">
                     <div className="whitespace-pre-line w-3/4">{resumeData.profile}</div>
                     <div className="right-0">
-                        <img src="/images/profile.jpg" alt="profile" className="right-0 w-52 h-52 object-contain" />
+                        <Image src="/images/profile.jpg" alt="profile" width = {208} height = {208} className="right-0 w-52 h-52 object-contain" />
                     </div>
                 </div>
             </article>
@@ -85,8 +86,8 @@ const Page1 = () => {
                 <div className="flex flex-row w-full">
                     <div className="whitespace-pre-line w-3/4">{resumeData.education}</div>
                     <div className="right-0">
-                        <img src="/images/hku.png" alt="hku" className="right-0 w-40 h-40 object-contain" />
-                        <img src="/images/sysu.png" alt="sysu" className="right-0 w-40 h-40 object-contain" />
+                        <Image src="/images/hku.png" alt="hku" width = {160} height = {160} className="right-0 w-40 h-40 object-contain" />
+                        <Image src="/images/sysu.png" alt="sysu" width = {160} height = {160} className="right-0 w-40 h-40 object-contain" />
                     </div>
                 </div>
             </article>
@@ -99,8 +100,8 @@ const Page1 = () => {
                 <div className="flex flex-row w-full">
                     <div className="whitespace-pre-line w-3/4">{resumeData.experience}</div>
                     <div className="right-0">
-                        <img src="/images/abc.png" alt="abc" className="right-0 w-40 h-40 object-contain" />
-                        <img src="/images/ebram.png" alt="abc" className="right-0 w-40 h-40 object-contain" />
+                        <Image src="/images/abc.png" alt="abc" width = {160} height = {160} className="right-0 w-40 h-40 object-contain" />
+                        <Image src="/images/ebram.png" alt="abc" width = {160} height = {160} className="right-0 w-40 h-40 object-contain" />
                     </div>
                 </div>
             </article>
@@ -113,7 +114,7 @@ const Page1 = () => {
                 <div className="flex flex-row w-full">
                     <div className="whitespace-pre-line w-3/4">{resumeData.project}</div>
                     <div className="right-0">
-                        <img src="/images/kyd.png" alt="kyd" className="right-0 w-80 h-100 object-contain" />
+                        <Image src="/images/kyd.png" alt="kyd" width = {320} height = {400} className="right-0 w-80 h-100 object-contain" />
                     </div>
                 </div>
             </article>

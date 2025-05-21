@@ -6,6 +6,7 @@ import { Swiper as SwiperType } from 'swiper';
 import { ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import Image from 'next/image';
 
 interface WorkData {
     work1: string;
@@ -104,8 +105,10 @@ const Page2 = () => {
                         >
                             {workplaceImages.map((image, index) => (
                                 <SwiperSlide key={index}>
-                                    <img 
-                                        src={image} 
+                                    <Image 
+                                        src={image}
+                                        width = {1000}
+                                        height = {1000}
                                         alt={`workplace ${index + 1}`} 
                                         className="w-full h-full object-contain" 
                                     />

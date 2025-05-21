@@ -7,6 +7,7 @@ import { ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
+import Image from 'next/image';
 
 interface gainData {
     tsa: string;
@@ -122,8 +123,10 @@ const Page3 = () => {
                         >
                             {sport_arbitration_images.map((image, index) => (
                                 <SwiperSlide key={index}>
-                                    <img 
-                                        src={image} 
+                                    <Image
+                                        src={image}
+                                        width = {1000}
+                                        height = {1000}
                                         alt={`sa ${index + 1}`} 
                                         className="w-full h-full object-contain" 
                                     />
@@ -182,8 +185,10 @@ const Page3 = () => {
                         >
                             {IET_images.map((image, index) => (
                                 <SwiperSlide key={index}>
-                                    <img 
+                                    <Image
                                         src={image} 
+                                        width = {1000}
+                                        height = {1000}
                                         alt={`IET ${index + 1}`} 
                                         className="w-full h-full object-contain" 
                                     />
@@ -207,14 +212,18 @@ const Page3 = () => {
                     </div>
                     <div className="relative w-2/3 h-[500px] overflow-hidden">
                         <div className="absolute w-full animate-scroll-vertical">
-                            <img 
+                            <Image
                                 src="/images/code.jpg" 
+                                width = {1000}
+                                height = {1000}
                                 alt="scrolling" 
                                 className="w-full object-cover"
                             />
                             {/* 复制一份图片实现无缝循环 */}
-                            <img 
+                            <Image
                                 src="/images/code.jpg" 
+                                width = {1000}
+                                height = {1000}
                                 alt="scrolling" 
                                 className="w-full object-cover"
                             />
