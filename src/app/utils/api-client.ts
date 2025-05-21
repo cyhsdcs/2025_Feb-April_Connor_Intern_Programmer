@@ -1,6 +1,6 @@
 type FetchOptions = {
     method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
-    body?: any;
+    body?: Record<string, unknown>;
     headers?: Record<string, string>;
 };
 

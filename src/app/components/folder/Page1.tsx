@@ -1,61 +1,41 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { userApi } from '@/app/utils/api-client';
 import Image from 'next/image';
 
-interface ResumeData {
-    profile: string;
-    experience: string;
-    education: string;
-    project: string;
-    other: string;
-}
-
 const Page1 = () => {
-    const [resumeData, setResumeData] = useState<ResumeData>({
-        profile: '',
-        experience: '',
-        education: '',
-        project: '',
-        other: '',
-    });
-    const [error, setError] = useState<string>();
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        async function loadResumeData() {
-            try {
-                const [profile, experience, education, project, other] = await Promise.all([
-                    userApi.getProfile(),
-                    userApi.getExperience(),
-                    userApi.getEducation(),
-                    userApi.getProject(),
-                    userApi.getOther(),
-                ]);
-
-                setResumeData({
-                    profile: profile.message,
-                    experience: experience.message,
-                    education: education.message,
-                    project: project.message,
-                    other: other.message,
-                });
-            } catch (err) {
-                setError(err instanceof Error ? err.message : 'Failed to load resume data');
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        loadResumeData();
-    }, []);
-
-    if (loading) return <div className="flex justify-center items-center min-h-screen">Loading...</div>;
-    if (error) return <div className="text-red-500 p-4">Error: {error}</div>;
+    const resumeData = {
+        profile: `- Familiar with Java back-end development, able to develop back-end based on Spring Boot frameworks.\n
+			- Experienced in H5 front-end programming, proficient in utilizing HTML/CSS, JavaScript, TypeScript, and well-versed in the Vue front-end framework.\n
+			- Conversant with typical Linux directives, capable of configuring the Nginx middleware and using Oracle, MySQL, and Redis databases.\n
+			- Skilled in using IDEA, Git, Maven, Postman, etc.\n
+			- Co-operative and friendly, also adaptable and responsive.`,
+        experience: `Agricultural Bank of China, Shenzhen Branch 07/2022 – 06/2024\n
+			Assistant Product Developer of Technology and Product Management Department, Development Division II\n
+			Engaged as a project manager or development team member in the design, development, testing, and maintenance of IT systems.\n\n
+			
+			eBRAM International Online Dispute Resolution Centre Limited – Spring Intern	02/2025 – 04/2025\n
+			Software Developer\n
+			Programming and support of LawTech application systems`,
+        education: `- The University of Hong Kong\n
+			09/2024 - Present\n
+			Master of Science in Computer Science (Financial Computing Stream)\n\n
+			- Sun Yat-sen University\n
+			09/2018 - 06/2022 \n
+			Bachelor of Engineering in Software Engineering`,
+        project: `Efficient - E Process Service\n
+			- Before: \n
+			Go to the bank on weekdays\n
+            Bring documents and copies\n
+            Get in line\n
+            - After: \n
+            Apply anywhere\n
+            Online review\n
+            Deliver to the door\n`,
+        other: 'Language: English (IELTS 7.5), Mandarin and Cantonese (native).'
+    };
 
     return (
         <div className="w-full">
-            <h2 className="text-2xl text-sky-500 sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 
+            <h2 className="text-2xl text-sky-500 sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 \
                             border-b-2 border-sky-300 pb-2 inline-block">
                 PROFILE
             </h2>

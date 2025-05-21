@@ -24,11 +24,6 @@ const IET_images = [
     "/images/IET.jpg",
 ]
 
-const code_images = [
-    "/images/code.jpg",
-    "/images/code.jpg",
-]
-
 const Page3 = () => {
     const [gainData, setGainData] = useState<gainData>({
         tsa: '',
