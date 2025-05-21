@@ -76,7 +76,7 @@ const Page2 = () => {
                 </h1>
             </div>
             <article className="w-full bg-white p-6 rounded-lg shadow-xl">
-                <h2 className="text-2xl font-semibold mb-4 text-abc-green">Glad with ☺️</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-abc-green">Impressed with ☺️</h2>
                 <div className="flex flex-row w-full h-auto">
                     <div className="whitespace-pre-line w-1/4 text-xl">{workData.work1}</div>
                     <div className="relative w-3/4 h-auto">
@@ -140,14 +140,14 @@ const Page2 = () => {
                 </div>
             </article>
 
-            <div className="flex justify-end my-6">
+            {/* <div className="flex justify-end my-6">
                 <button 
                     onClick={() => setShowModal(true)}
                     className="px-4 py-2 bg-white text-abc-green hover:bg-red-600 hover:text-white rounded-lg shadow-md transition-colors"
                 >
                     And…
                 </button>
-            </div>
+            </div> */}
             
             {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center">
