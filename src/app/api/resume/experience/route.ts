@@ -15,8 +15,9 @@ export async function GET() {
 			Programming and support of LawTech application systems`,
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { error: 'Failed to get experience' },
+            { error: 'Failed to get experience'+message },
             { status: 500 },
         );
     }

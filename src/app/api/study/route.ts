@@ -9,8 +9,9 @@ export async function GET() {
             message: `Many`,
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { error: 'Failed to get study' },
+            { error: 'Failed to get study'+message },
             { status: 500 },
         );
     }

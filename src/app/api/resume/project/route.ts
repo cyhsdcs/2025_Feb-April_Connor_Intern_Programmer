@@ -17,8 +17,9 @@ export async function GET() {
             Deliver to the door\n`,
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { error: 'Failed to get project' },
+            { error: 'Failed to get project'+message },
             { status: 500 },
         );
     }

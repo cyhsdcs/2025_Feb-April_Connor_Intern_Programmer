@@ -11,8 +11,9 @@ export async function GET() {
                 - More combination? Delivery, healthcare, agriculture, etc`,
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { error: 'Failed to get iet' },
+            { error: 'Failed to get iet'+message },
             { status: 500 },
         );
     }

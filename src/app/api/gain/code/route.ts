@@ -13,8 +13,9 @@ export async function GET() {
                 - Learn team collaboration`,
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { error: 'Failed to get code' },
+            { error: 'Failed to get code'+message },
             { status: 500 },
         );
     }

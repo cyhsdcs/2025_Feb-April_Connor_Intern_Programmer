@@ -14,8 +14,9 @@ export async function GET() {
 			Bachelor of Engineering in Software Engineering`,
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { error: 'Failed to get education' },
+            { error: 'Failed to get education'+message },
             { status: 500 },
         );
     }

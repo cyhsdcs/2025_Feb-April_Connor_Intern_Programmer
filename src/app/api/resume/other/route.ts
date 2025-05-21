@@ -10,8 +10,9 @@ export async function GET() {
                 'Language: English (IELTS 7.5), Mandarin and Cantonese (native).',
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { error: 'Failed to get other' },
+            { error: 'Failed to get other'+message },
             { status: 500 },
         );
     }

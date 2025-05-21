@@ -17,8 +17,9 @@ export async function GET() {
             \u00A0\u00A0\u00A0\u00A0·Vue + Spring Boot forever!\n`,
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { error: 'Failed to get work disadvantage' },
+            { error: 'Failed to get work disadvantage'+message },
             { status: 500 },
         );
     }

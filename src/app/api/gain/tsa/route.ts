@@ -13,8 +13,9 @@ export async function GET() {
                 – it's stepping up to help each other do things no one could do alone.`,
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { error: 'Failed to get tsa' },
+            { error: 'Failed to get tsa'+message },
             { status: 500 },
         );
     }

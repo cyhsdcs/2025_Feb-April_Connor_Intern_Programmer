@@ -16,8 +16,9 @@ export async function GET() {
             - Cheap canteen food, etc.`,
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { error: 'Failed to get work advantage' },
+            { error: 'Failed to get work advantage'+message },
             { status: 500 },
         );
     }

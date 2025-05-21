@@ -13,8 +13,9 @@ export async function GET() {
 			- Co-operative and friendly, also adaptable and responsive.`,
         });
     } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { error: 'Failed to get profile' },
+            { error: 'Failed to get profile'+message },
             { status: 500 },
         );
     }
